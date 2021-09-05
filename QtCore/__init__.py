@@ -1,3 +1,4 @@
+from typing import Type
 from ..qt_compat import QT_API
 
 if QT_API == "PySide6":
@@ -5,8 +6,8 @@ if QT_API == "PySide6":
 elif QT_API == "PyQt6":
     from PyQt6.QtCore import *
 
-    Slot = pyqtSlot
-    Signal = pyqtSignal
+    Slot: Type[pyqtSlot] = pyqtSlot
+    Signal: Type[pyqtSignal] = pyqtSignal
     del pyqtSlot
     del pyqtSignal
 elif QT_API == "PyQt5":
