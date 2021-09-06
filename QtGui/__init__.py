@@ -9,3 +9,8 @@ elif QT_API == "PyQt5":
     from PyQt5.QtWidgets import QAction, QActionGroup
 elif QT_API == "PySide2":
     from PySide2.QtGui import *
+    from PySide2.QtWidgets import QAction, QActionGroup
+
+if QT_API in ["PyQt5", "PySide2"]:
+    QAction = QAction
+    QActionGroup = QActionGroup

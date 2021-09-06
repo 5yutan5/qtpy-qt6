@@ -9,11 +9,15 @@ elif QT_API == "PyQt5":
 elif QT_API == "PySide2":
     from PySide2.QtWidgets import *
 
-    class Application(QApplication):
-        def __init__(self, arg__1) -> None:
-            super().__init__(arg__1)
 
-        def exec(self) -> int:
+class Application(QApplication):
+    def __init__(self, arg__1) -> None:
+        super().__init__(arg__1)
+
+    def exec(self) -> int:
+        if QT_API == "PySide2":
             return super().exec_()
+        return super().exec()
 
-    QApplication = Application
+
+QApplication = Application
