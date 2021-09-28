@@ -1,4 +1,3 @@
-from typing import Type
 from ..qt_compat import QT_API
 
 if QT_API == "PySide6":
@@ -6,16 +5,12 @@ if QT_API == "PySide6":
 elif QT_API == "PyQt6":
     from PyQt6.QtCore import *
 
-    Slot: Type[pyqtSlot] = pyqtSlot
-    Signal: Type[pyqtSignal] = pyqtSignal
-    del pyqtSlot
-    del pyqtSignal
+    Slot = pyqtSlot  # noqa: F405
+    Signal = pyqtSignal  # noqa: F405
 elif QT_API == "PyQt5":
     from PyQt5.QtCore import *
 
-    Slot = pyqtSlot
-    Signal = pyqtSignal
-    del pyqtSlot
-    del pyqtSignal
+    Slot = pyqtSlot  # noqa: F405
+    Signal = pyqtSignal  # noqa: F405
 elif QT_API == "PySide2":
     from PySide2.QtCore import *
