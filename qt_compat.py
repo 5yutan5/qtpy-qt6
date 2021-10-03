@@ -67,7 +67,6 @@ if QT_API is None:
     QT_API = _get_installed_api()
 if QT_API is None:
     raise ImportError(
-        "Failed to import qt-binding."
-        "\nCheck modules(pip list)."
+        "Failed to import qt-binding. Check modules(pip list)."
         "\nAvailable Qt-binding modules: PySide6, PyQt6, PyQt5, PySide2."
     )
