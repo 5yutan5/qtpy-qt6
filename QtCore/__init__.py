@@ -1,5 +1,7 @@
-from ..qt_compat import QT_API
+from ..qt_compat import QT_API, qt_import_error
 
+if QT_API is None:
+    raise qt_import_error
 if QT_API == "PySide6":
     from PySide6.QtCore import *
 elif QT_API == "PyQt6":

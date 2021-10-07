@@ -2,6 +2,17 @@ import os
 import sys
 from typing import Optional
 
+
+class QtImportError(ImportError):
+    """Error raise if no bindings could be selected."""
+    pass
+
+
+qt_import_error = QtImportError(
+    "Failed to import qt-binding. Check packages(pip list)."
+    "\n\tAvailable Qt-binding packages: PySide6, PyQt6, PyQt5, PySide2.")
+
+
 # Qt6
 _QT_API_PYSIDE6 = "PySide6"
 _QT_API_PYQT6 = "PyQt6"
@@ -65,8 +76,3 @@ def _get_installed_api() -> Optional[str]:
 QT_API = _get_loaded_api()
 if QT_API is None:
     QT_API = _get_installed_api()
-if QT_API is None:
-    raise ImportError(
-        "Failed to import qt-binding. Check modules(pip list)."
-        "\nAvailable Qt-binding modules: PySide6, PyQt6, PyQt5, PySide2."
-    )
