@@ -13,7 +13,7 @@ elif QT_API == "PySide2":
 
 class Application(QApplication):  # noqa: F405
     def exec(self) -> int:
-        if QT_API == "PySide2":
+        if hasattr(super(), "exec_"):
             return super().exec_()
         return super().exec()
 
