@@ -8,7 +8,6 @@ This module provides a workaround of the problem that Qt6 cannot be used with [q
 - QtWidgets
 - QtCore
 - QtGui
-- QtSvg
 
 ## Usage
 
