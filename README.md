@@ -1,4 +1,5 @@
 # qtpy_qt6
+
 Provides an uniform layer to support some features of PyQt6 PySide6, PyQt5 and PySide2 with a single codebase.
 
 This module provides a workaround of the problem that Qt6 cannot be used with [qtpy](https://github.com/spyder-ide/qtpy).
@@ -8,6 +9,7 @@ This module provides a workaround of the problem that Qt6 cannot be used with [q
 - QtWidgets
 - QtCore
 - QtGui
+- QtSvg
 
 ## Usage
 
